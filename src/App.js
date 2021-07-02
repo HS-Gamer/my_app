@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Header from "./components/Header/header";
+import SideNavigation from "./components/Sidebar/sideNavigation";
+import { Col, Row } from "reactstrap";
+import Home from "./components/Dashboard/Home";
+import './App.css'
 function App() {
+  const styles = {
+    contentDiv: {
+      display: "flex",
+    },
+    contentMargin: {
+      marginLeft: "10px",
+      width: "100%",
+    },
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Row>
+        <Col>
+          <Header></Header>
+        </Col>
+      </Row>
+      <div style={styles.contentDiv}>
+        <SideNavigation></SideNavigation>
+        <div style={styles.contentMargin}>
+        
+        <div className="container">
+          <Home/>
+        </div>
+
+        </div>
+      </div>
+    </>
   );
 }
-
 export default App;
